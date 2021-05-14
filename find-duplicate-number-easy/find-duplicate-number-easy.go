@@ -12,6 +12,7 @@ func main() {
 	fmt.Println(sol2(arr))
 	fmt.Println(sol3(arr, n))
 	fmt.Println(sol4(arr))
+	fmt.Println(sol5(arr))
 }
 
 func sol1(arr []int) int {
@@ -62,4 +63,18 @@ func sol4(arr []int) int {
 	}
 
 	return res
+}
+
+func sol5(arr []int) int {
+	arr2 := make([]int, len(arr))
+
+	for _, item := range arr {
+		if arr2[item] < 0 {
+			return item
+		}
+
+		arr2[item] = -2
+	}
+
+	return -1
 }
